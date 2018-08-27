@@ -1,0 +1,13 @@
+﻿body {
+    
+}
+
+#file-entry-block {
+    background-color: azure;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.btn-standard {
+    max-height: 100%;
+}
