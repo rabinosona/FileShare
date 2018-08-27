@@ -11506,11 +11506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kot/Projects/FileSharing/FileSharing/FileSharing.csproj",
+      "projectUniqueName": "/Users/kot/Documents/ASP/FileShare/FileSharing/FileSharing.csproj",
       "projectName": "FileSharing",
-      "projectPath": "/Users/kot/Projects/FileSharing/FileSharing/FileSharing.csproj",
+      "projectPath": "/Users/kot/Documents/ASP/FileShare/FileSharing/FileSharing.csproj",
       "packagesPath": "/Users/kot/.nuget/packages/",
-      "outputPath": "/Users/kot/Projects/FileSharing/FileSharing/obj",
+      "outputPath": "/Users/kot/Documents/ASP/FileShare/FileSharing/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
