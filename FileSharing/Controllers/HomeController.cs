@@ -14,5 +14,10 @@ namespace FileSharing.Controllers
         {
             return View("Index");
         }
+
+        public ViewResult LoadFile()
+        {
+            return View("FileLoaded");
+        }
     }
 }

@@ -17,6 +17,9 @@
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
+    <None Remove="Views\Home\FileLoaded.html" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="wwwroot\css\main.css" />
   </ItemGroup>
 </Project>
