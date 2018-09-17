@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FileSharing.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FileSharing.Controllers
 {
@@ -15,9 +16,10 @@ namespace FileSharing.Controllers
             return View("Index");
         }
 
-        public ViewResult LoadFile()
+        [HttpPost("Home")]
+        public IActionResult LoadFile([FromForm]IFormFile file)
         {
-            return View("FileLoaded");
+            return View("FileLoaded", file);
         }
     }
 }

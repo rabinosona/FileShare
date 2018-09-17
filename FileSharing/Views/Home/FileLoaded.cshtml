@@ -1,6 +1,4 @@
-﻿@{
-Layout = null;
-}
+﻿@model Microsoft.AspNetCore.Http.IFormFile
 
 
 <!DOCTYPE html>
@@ -10,6 +8,10 @@ Layout = null;
     <title></title>
 </head>
 <body>
-    some test text in here.
+    <div id="file-loaded">
+        Your file has been loaded!
+        Name: @Model.FileName
+        Size: @Model.Length bytes.
+    </div>
 </body>
 </html>

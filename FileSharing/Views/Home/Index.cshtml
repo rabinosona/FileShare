@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <html>
 <head>
@@ -10,9 +11,13 @@
 <body>
     <center><h1>Test file share!</h1></center>
     <div id="file-entry-block">
-            <h4>Please load the file from your computer:</h4>
-                <input type="button" value="..."
-                class="btn-standard" onclick="location.href='@Url.Action("LoadFile", "Home")'" />
+        <h4>Please load the file from your computer:</h4>
+        <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="LoadFile">
+            <input type="file" name="file" />
+            <button type="submit" class="btn-standard">
+                Load the file.
+            </button>
+        </form>
     </div>
 </body>
 </html>
