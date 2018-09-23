@@ -1,12 +1,10 @@
-import _ from 'lodash';
 
-  function component() {
-    let element = document.createElement('div');
+function RenderTest()
+{
+  ReactDOM.render(
+    <h1>Hello, world!</h1>,
+    document.getElementById('root')
+  );
+}
 
-// Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-    return element;
-  }
-
-  document.body.appendChild(component());
+RenderTest();
