@@ -11,8 +11,10 @@ export default class SignInComponent extends Component {
   render() {
     return (
       <div>
-          <h1 className={alignment.logo}>Hello, world!</h1>
+        <div className={alignment.header}>
+          <h1 className={alignment.header_logo}>Hello, world!</h1>
           <Button bsStyle="danger">Test?</Button>
+        </div>
       </div>
     );
   }

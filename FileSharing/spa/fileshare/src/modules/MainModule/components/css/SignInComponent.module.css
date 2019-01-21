@@ -1,3 +1,18 @@
-.logo {
-    float: right;
+.header {
+    display: inline-flex;
+    background-color: blanchedalmond;
+    justify-content: center;
+}
+
+.header_home {
+
+}
+
+.header_logo {
+    color: black;
+    flex-grow: 50%;
+}
+
+.header_spacing {
+
 }
