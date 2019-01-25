@@ -12,8 +12,8 @@ export default class SignInComponent extends Component {
     return (
       <div>
         <div className={alignment.header}>
-          <h1 className={alignment.header_logo}>Hello, world!</h1>
-          <Button bsStyle="danger">Test?</Button>
+          <p className={alignment.header_logo}>Oche bien filehsare!</p>
+          <Button className={alignment.header_home} bsStyle="primary">Home</Button>
         </div>
       </div>
     );

@@ -1,14 +1,19 @@
 .header {
     display: inline-flex;
     background-color: blanchedalmond;
-    justify-content: center;
+    justify-content: left;
+    width: 100%;
+    min-height: 50px;
+    align-items: center;
 }
 
 .header_home {
-
+    margin-left: 2.5%;
 }
 
 .header_logo {
+    vertical-align: middle;
+    margin-left: 7.5%;
     color: black;
     flex-grow: 50%;
 }
