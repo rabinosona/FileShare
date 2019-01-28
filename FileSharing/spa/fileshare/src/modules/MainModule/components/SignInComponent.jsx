@@ -3,25 +3,29 @@ import { Button } from "react-bootstrap";
 import { FormControl } from "react-bootstrap";
 import classNames from "classnames";
 
-import alignment from "./css/SignInComponent.module.css";
+import moduleCss from "./css/ModuleComponent.module.css";
 
-export default class SignInComponent extends Component {
+export default class ModuleComponent extends Component {
   constructor(props) {
     super(props);
+  }
+
+  _uploadFile() {
+
   }
 
   render() {
     return (
       <html>
         <body>
-          <div className={alignment.header}>
-            <div className={alignment.header_logo_container}>
-              <div className={alignment.header_logo}> Oche bien filehsare!</div>
+          <div className={moduleCss.header}>
+            <div className={moduleCss.header_logo_container}>
+              <div className={moduleCss.header_logo}> Oche bien filehsare!</div>
             </div>
             <Button
               className={classNames({
-                [alignment.header_home]: true,
-                [alignment.button]: true
+                [moduleCss.header_home]: true,
+                [moduleCss.button]: true
               })}
               bsStyle="link"
             >
@@ -29,8 +33,8 @@ export default class SignInComponent extends Component {
             </Button>
             <Button
               className={classNames({
-                [alignment.header_sign_in]: true,
-                [alignment.button]: true
+                [moduleCss.header_sign_in]: true,
+                [moduleCss.button]: true
               })}
               bsStyle="link"
             >
@@ -38,24 +42,23 @@ export default class SignInComponent extends Component {
             </Button>
             <Button
               className={classNames({
-                [alignment.header_sign_up]: true,
-                [alignment.button]: true
+                [moduleCss.header_sign_up]: true,
+                [moduleCss.button]: true
               })}
               bsStyle="link"
             >
               Sign up
             </Button>
             <FormControl
-              className={alignment.header_search}
+              className={moduleCss.header_search}
               bsStyle=""
               placeholder="Enter text"
             />
           </div>
-          <div className={alignment.background}>
+          <div className={moduleCss.background}>
           </div>
-          <div className={alignment.content}>
-              <div className={alignment.test}>
-              esse???</div>
+          <div className={moduleCss.content}>
+              <Button onClick={(file) => this._uploadFile(file)}>Upload the file...</Button>
           </div>
         </body>
       </html>

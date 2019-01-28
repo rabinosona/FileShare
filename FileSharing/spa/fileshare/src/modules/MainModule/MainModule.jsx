@@ -1,5 +1,5 @@
 import React from 'react';
-import SignInComponent from './components/SignInComponent'
+import ModuleComponent from './components/SignInComponent'
 
 export default class MainModule extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ export default class MainModule extends React.Component {
   render() {
     return (
       <div>
-        <SignInComponent></SignInComponent>
+        <ModuleComponent></ModuleComponent>
       </div>
     );
   }
