@@ -77,8 +77,10 @@ body {
 
 /* content */
 
-.upload_button {
+/* upload */
 
+.upload_button_sign {
+    padding-right: 0%;
 }
 
 /* logo */

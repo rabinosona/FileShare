@@ -3,27 +3,46 @@ import { Button } from "react-bootstrap";
 import { FormControl } from "react-bootstrap";
 import classNames from "classnames";
 
-import alignment from "./css/SignInComponent.module.css";
+import mainCss from "./css/SignInComponent.module.css";
 
-import styled from "styled-components";
+import { BasicApiUrl } from '../../../constants/constants.js'
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default class SignInComponent extends Component {
   constructor(props) {
     super(props);
   }
 
+  _handleFileSubmit(event) {
+    if (event && event.target.files[0]) {
+      let file = event.target.files[0];
+
+      let data = new FormData();
+      data.append('file', file);
+
+      fetch(BasicApiUrl + 'uploadFile', {
+        method: 'POST',
+        body: data
+      }).then(response => {
+        console.log(response);
+      });
+    }
+  }
+
   render() {
     return (
       <html>
         <body>
-          <div className={alignment.header}>
-            <div className={alignment.header_logo_container}>
-              <div className={alignment.header_logo}> Oche bien filehsare!</div>
+          <div className={mainCss.header}>
+            <div className={mainCss.header_logo_container}>
+              <div className={mainCss.header_logo}> Oche bien filehsare!</div>
             </div>
             <Button
               className={classNames({
-                [alignment.header_home]: true,
-                [alignment.button]: true
+                [mainCss.header_home]: true,
+                [mainCss.button]: true
               })}
               bsStyle="link"
             >
@@ -31,8 +50,8 @@ export default class SignInComponent extends Component {
             </Button>
             <Button
               className={classNames({
-                [alignment.header_sign_in]: true,
-                [alignment.button]: true
+                [mainCss.header_sign_in]: true,
+                [mainCss.button]: true
               })}
               bsStyle="link"
             >
@@ -40,30 +59,35 @@ export default class SignInComponent extends Component {
             </Button>
             <Button
               className={classNames({
-                [alignment.header_sign_up]: true,
-                [alignment.button]: true
+                [mainCss.header_sign_up]: true,
+                [mainCss.button]: true
               })}
               bsStyle="link"
             >
               Sign up
             </Button>
             <FormControl
-              className={alignment.header_search}
+              className={mainCss.header_search}
               bsStyle=""
               placeholder="Enter text"
             />
           </div>
-          <div className={alignment.background} />
-          <div className={alignment.content}>
+          <div className={mainCss.background} />
+          <div className={mainCss.content}>
             <label
-              className='btn btn-primary btn-file'
+              className={classNames({
+                'btn': true,
+                'btn-primary': true,
+                'btn-file': true,
+                [mainCss.upload_button]: true
+              })}
             >
               <input
                 type="file"
-                className={alignment.input_file_upload}
+                className={mainCss.input_file_upload}
+                onChange={(event) => this._handleFileSubmit(event)}
               />
-              <i class="fa fa-cloud-upload" />
-              Upload file
+              <FontAwesomeIcon className={mainCss.upload_button_sign} icon={faCloudUploadAlt} /> Upload file
             </label>
           </div>
         </body>
