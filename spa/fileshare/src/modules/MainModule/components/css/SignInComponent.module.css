@@ -15,16 +15,17 @@ body {
 
 .background {
     min-height: 95vh;
+    min-width: 100%;
     background-image: url(../../../../media/mainbackground.jpg);
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
-    margin:0;
-    padding:0;
+    position: absolute;
+    background-size: cover;
 }
 
 .content {
     width: 100%;
+    min-height: 95vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -49,6 +50,8 @@ body {
 
 /* buttons */
 
+/* header */
+
 .button {
     color: #D6E7ED;
 }
@@ -72,12 +75,26 @@ body {
     margin-left: 2%;
 }
 
+/* content */
+
+.upload_button {
+
+}
+
 /* logo */
 
 .header_logo {
     color: #D6E7ED;
     font-size: 21px;
 }
+
+/* various controls */
+
+.input_file_upload {
+    display: none !important;
+}
+
+/* header */
 
 .header_search {
     margin-left: 5%;

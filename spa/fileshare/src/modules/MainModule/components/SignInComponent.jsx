@@ -5,6 +5,8 @@ import classNames from "classnames";
 
 import alignment from "./css/SignInComponent.module.css";
 
+import styled from "styled-components";
+
 export default class SignInComponent extends Component {
   constructor(props) {
     super(props);
@@ -51,11 +53,18 @@ export default class SignInComponent extends Component {
               placeholder="Enter text"
             />
           </div>
-          <div className={alignment.background}>
-          </div>
+          <div className={alignment.background} />
           <div className={alignment.content}>
-              <div className={alignment.test}>
-              esse???</div>
+            <label
+              className='btn btn-primary btn-file'
+            >
+              <input
+                type="file"
+                className={alignment.input_file_upload}
+              />
+              <i class="fa fa-cloud-upload" />
+              Upload file
+            </label>
           </div>
         </body>
       </html>
