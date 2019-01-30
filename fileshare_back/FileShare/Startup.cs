@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FileShare.BusinessLogic;
+using FileShare.DAL;
 using FileShare.Services;
 using FileShare.Services.Configuration;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +34,9 @@ namespace FileShare
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped<IFileRepository, FileRepository>();
+            services.AddScoped<IFileBl, FileBl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

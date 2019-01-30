@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileShare.DAL
 {
-    interface IFileUploadRepository
+    public interface IFileRepository
     {
         void InsertFileInfo(FileInfoModel model);
     }

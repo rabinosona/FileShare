@@ -1,3 +1,0 @@
-{
-  "connectionString": "Server=tcp:fileshare.database.windows.net,1433;Initial Catalog=fileshare;Persist Security Info=False;User ID=rabinosona;Password=RutaMuta1$;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
-}
