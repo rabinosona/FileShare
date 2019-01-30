@@ -3,3 +3,5 @@ fileshare_back/FileShare/bin/Debug/netcoreapp2.1/appconfig.json
 *.lock
 *.ide
 *.cache
+fileshare_back/FileShare/appconfig.json
+fileshare_back/FileShare/obj/Debug/netcoreapp2.1/FileShare.csprojAssemblyReference.cache
