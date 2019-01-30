@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" build-on-make="true" name="fileshare">
-    <output-path>$PROJECT_DIR$/out/artifacts/fileshare</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="spring/web/Web" />
-    </root>
-  </artifact>
-</component>
