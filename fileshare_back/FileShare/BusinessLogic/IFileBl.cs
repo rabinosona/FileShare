@@ -4,13 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FileShare.Services
+namespace FileShare.BusinessLogic
 {
-    public class FileUploadService
+    public interface IFileBl
     {
-        public void UploadFile(IFormFile file)
-        {
-
-        }
+        void Upload(IFormFile file);
     }
 }
