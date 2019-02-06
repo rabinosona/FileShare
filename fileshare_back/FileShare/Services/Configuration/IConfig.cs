@@ -24,7 +24,7 @@ namespace FileShare.Services.Configuration
 
         public string ObtainConfigurationProperty(string property)
         {
-            return ConfigurationJson?[property].Value<string>();
+            return ConfigurationJson?[property].FirstOrDefault(null).Value<string>();
         }
     }
 }

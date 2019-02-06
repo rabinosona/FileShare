@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using FileShare.BusinessLogic;
 using FileShare.DAL;
+using FileShare.DAL.EntityContext;
 using FileShare.Services;
 using FileShare.Services.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -37,6 +39,9 @@ namespace FileShare
 
             services.AddScoped<IFileRepository, FileRepository>();
             services.AddScoped<IFileBl, FileBl>();
+
+            services.AddDbContext<FileInfoContext>(options =>
+                options.UseSqlServer(ConfigurationExtensions.GetConnectionString(this.Configuration, "FileShare")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FileShare.BusinessLogic
 {
@@ -15,18 +16,19 @@ namespace FileShare.BusinessLogic
             _fileRepository = fileRepository;
         }
 
-        public void Upload(IFormFile file)
+        public async Task UploadAsync(IFormFile file)
         {
-            SaveFileInStorage(file);
+            var filePath = await SaveFileInStorage(file);
 
-            _fileRepository.InsertFileInfo(new Models.FileInfoModel
+            await _fileRepository.InsertFileInfoAsync(new Models.FileInfoModel
             {
                 FileName = file.FileName,
-                FileSize = file.Length
+                FileSize = file.Length,
+                FilePath = filePath
             });
         }
 
-        private void SaveFileInStorage(IFormFile file)
+        private async Task<string> SaveFileInStorage(IFormFile file)
         {
             var fileStoragePath = new ConfigStorage().ObtainConfiguration(Data.ConfigType.AppConfig).ObtainConfigurationProperty("fileStoragePath");
             Directory.CreateDirectory(fileStoragePath);
@@ -37,9 +39,11 @@ namespace FileShare.BusinessLogic
             {
                 using (var fileStream = file.OpenReadStream())
                 {
-                    fileStream.CopyTo(stream);
+                    await fileStream.CopyToAsync(stream);
                 }
             }
+
+            return filePath;
         }
 
         private string GenerateRandomFileName(string filename, string fileStoragePath)

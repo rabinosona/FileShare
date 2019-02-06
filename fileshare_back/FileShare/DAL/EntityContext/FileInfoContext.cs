@@ -5,10 +5,10 @@ namespace FileShare.DAL.EntityContext
 {
     public class FileInfoContext : DbContext
     {
-        public FileInfoContext() : base()
+        public FileInfoContext(DbContextOptions<FileInfoContext> options) : base(options)
         {
 
-        }
+        }   
 
         public DbSet<FileInfoModel> Files { get; set; }
     }

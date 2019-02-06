@@ -8,6 +8,6 @@ namespace FileShare.DAL
 {
     public interface IFileRepository
     {
-        void InsertFileInfo(FileInfoModel model);
+        Task InsertFileInfoAsync(FileInfoModel model);
     }
 }

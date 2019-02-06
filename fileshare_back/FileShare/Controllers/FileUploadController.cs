@@ -25,7 +25,7 @@ namespace FileShare.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
-            _fileBl.Upload(file);
+            await _fileBl.UploadAsync(file);
 
             return Ok();
         }

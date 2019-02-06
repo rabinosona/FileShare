@@ -8,6 +8,6 @@ namespace FileShare.BusinessLogic
 {
     public interface IFileBl
     {
-        void Upload(IFormFile file);
+        Task UploadAsync(IFormFile file);
     }
 }
