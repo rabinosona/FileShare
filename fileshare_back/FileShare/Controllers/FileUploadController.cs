@@ -1,6 +1,7 @@
 ﻿using FileShare.BusinessLogic;
 using FileShare.Services;
 using FileShare.Services.Configuration;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace FileShare.Controllers
-{   
+{
     [ApiController]
     [Route("api")]
     public class FileUploadController : ControllerBase
@@ -25,9 +26,16 @@ namespace FileShare.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadFile(IFormFile file)
         {
-            await _fileBl.UploadAsync(file);
+            try
+            {
+                await _fileBl.UploadAsync(file);
 
-            return Ok();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest("Error while processing file.");
+            }
         }
     }
 }

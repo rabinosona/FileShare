@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 95vh;
 }
 
 .background {
@@ -73,6 +73,7 @@ body {
 
 .header_sign_up {
     margin-left: 2%;
+    width: 80px;
 }
 
 /* content */

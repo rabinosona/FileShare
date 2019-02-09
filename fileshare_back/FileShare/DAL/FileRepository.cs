@@ -17,7 +17,6 @@ namespace FileShare.DAL
         public async Task InsertFileInfoAsync(FileInfoModel model)
         {
             await _fileContext.AddAsync(model);
-
             await _fileContext.SaveChangesAsync();
         }
     }

@@ -24,7 +24,11 @@ namespace FileShare.Services.Configuration
 
         public string ObtainConfigurationProperty(string property)
         {
-            return ConfigurationJson?[property].FirstOrDefault(null).Value<string>();
+            var value = ConfigurationJson?[property];
+
+            if (value != null) return value.Value<string>();
+
+            throw new ArgumentNullException("The configuration value is null.");
         }
     }
 }

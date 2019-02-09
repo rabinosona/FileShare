@@ -1,5 +1,5 @@
 import React from 'react';
-import SignInComponent from './components/SignInComponent'
+import HomePageComponent from './components/HomeComponent';
 
 export default class MainModule extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ export default class MainModule extends React.Component {
   render() {
     return (
       <div>
-        <SignInComponent></SignInComponent>
+        <HomePageComponent></HomePageComponent>
       </div>
     );
   }
