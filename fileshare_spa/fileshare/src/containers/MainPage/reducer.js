@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 
-import { SIGN_IN, SIGN_OUT, UPLOAD_FILE_START, UPLOAD_FILE_PROGRESS, UPLOAD_FILE_COMPLETED, UPLOAD_FILE_FAILURE } from './constants';
+import { SIGN_IN, SIGN_UP, UPLOAD_FILE_START, UPLOAD_FILE_PROGRESS, UPLOAD_FILE_COMPLETED, UPLOAD_FILE_FAILURE } from './constants';
 
 
 export const initialState = fromJS({
@@ -9,21 +9,22 @@ export const initialState = fromJS({
     isUploadingComplete: false,
     fileUploadProgress: 0,
     csrf: null,
+    uploadProgress: 0,
 });
 
-function mainPageReducer(state = initialState, action) {
+export const mainPageReducer = (state = initialState, action) => {
     switch (action.type) {
         case SIGN_IN: {
 
         }
-        case SIGN_OUT: {
+        case SIGN_UP: {
 
         }
         case UPLOAD_FILE_START: {
             return state.set('isUploading', true);
         }
         case UPLOAD_FILE_PROGRESS: {
-            return state.set('fileUploadProgress', action.progress);
+            return state.set('uploadProgress', action.progress);
         }
         case UPLOAD_FILE_COMPLETED: {
             return state.set('isUploadingComplete', action.result);

@@ -1,7 +1,7 @@
 import 
 { 
     SIGN_IN, 
-    SIGN_OUT, 
+    SIGN_UP, 
     UPLOAD_FILE_START, 
     UPLOAD_FILE_PROGRESS,
     UPLOAD_FILE_COMPLETED,
@@ -14,7 +14,7 @@ export const signIn = params => ({
 });
 
 export const signOut = () => ({
-    type: SIGN_OUT
+    type: SIGN_UP
 });
 
 export const uploadFileStart = file => ({
@@ -22,19 +22,21 @@ export const uploadFileStart = file => ({
     file: file
 });
 
-export const uploadFileProgress = progress => ({
+export const uploadFileProgress = (progress, file) => ({
     type: UPLOAD_FILE_PROGRESS,
-    file: progress
+    payload: progress,
+    meta: { file },
 });
 
-export const uploadFileCompleted = result => ({
+export const uploadFileCompleted = (file) => ({
     type: UPLOAD_FILE_COMPLETED,
-    file: result
+    meta: { file },
 });
 
-export const uploadFileFailure = error => ({
+export const uploadFileFailure = (error, file) => ({
     type: UPLOAD_FILE_FAILURE,
-    file: error
+    payload: error,
+    meta: { file },
 });
 
 

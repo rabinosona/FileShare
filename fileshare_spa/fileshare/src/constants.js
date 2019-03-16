@@ -1,0 +1,1 @@
+export const ApiServerAddress = 'http://localhost:65096';
